@@ -6,15 +6,58 @@ import lombok.Data;
 @Data
 public class BlogEntry {
 
+  /**
+   * Blog entry id.
+   */
   private int id;
-  private String originalLocale; // Original locale of the blog entry.
-  private int creationTimeSeconds; // Time, when blog entry was created, in unix format.
-  private String authorHandle; // Author user handle.
-  private String title; // Localized.
-  private String content; // Localized. Not included in short version.
+
+  /**
+   * Original locale of the blog entry.
+   */
+  private String originalLocale;
+
+  /**
+   * Time, when blog entry was created, in unix format.
+   */
+  private int creationTimeSeconds;
+
+  /**
+   * Author user handle.
+   */
+  private String authorHandle;
+
+  /**
+   * Localized.
+   */
+  private String title;
+
+  /**
+   * Localized. Not included in short version.
+   */
+  private String content;
+
+  /**
+   * Locale of a blog entry.
+   */
   private String locale;
-  private int modificationTimeSeconds; // Time, when blog entry has been updated, in unix format.
-  private boolean allowViewHistory; // If true, you can view any specific revision of the blog entry.
+
+  /**
+   * Time, when blog entry has been updated, in unix format.
+   */
+  private int modificationTimeSeconds;
+
+  /**
+   * If true, you can view any specific revision of the blog entry.
+   */
+  private boolean allowViewHistory;
+
+  /**
+   * List of tags corresponding to blog entry.
+   */
   private List<String> tags;
+
+  /**
+   * Rating of the blog entry.
+   */
   private int rating;
 }
