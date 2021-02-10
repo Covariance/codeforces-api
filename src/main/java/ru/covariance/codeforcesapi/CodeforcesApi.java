@@ -38,44 +38,51 @@ public class CodeforcesApi {
   private final String secret;
   private final String lang;
 
-  private final static String CODEFORCES_API = "https://codeforces.com/api/";
+  private static final String CODEFORCES_API = "https://codeforces.com/api/";
 
-  private final static ObjectMapper OBJECT_MAPPER = new ObjectMapper();
-  private final static Random RANDOM = new Random();
+  private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
+  private static final Random RANDOM = new Random();
 
-  private final static ObjectReader BLOG_ENTRY_LIST_READER =
+  private static final ObjectReader BLOG_ENTRY_LIST_READER =
       OBJECT_MAPPER.readerFor(new TypeReference<List<BlogEntry>>() {
       });
-  private final static ObjectReader COMMENT_LIST_READER =
+  private static final ObjectReader COMMENT_LIST_READER =
       OBJECT_MAPPER.readerFor(new TypeReference<List<Comment>>() {
       });
-  private final static ObjectReader CONTEST_LIST_READER =
+  private static final ObjectReader CONTEST_LIST_READER =
       OBJECT_MAPPER.readerFor(new TypeReference<List<Contest>>() {
       });
-  private final static ObjectReader HACK_LIST_READER =
+  private static final ObjectReader HACK_LIST_READER =
       OBJECT_MAPPER.readerFor(new TypeReference<List<Hack>>() {
       });
-  private final static ObjectReader RATING_CHANGE_LIST_READER =
+  private static final ObjectReader RATING_CHANGE_LIST_READER =
       OBJECT_MAPPER.readerFor(new TypeReference<List<RatingChange>>() {
       });
-  private final static ObjectReader RECENT_ACTION_LIST_READER =
+  private static final ObjectReader RECENT_ACTION_LIST_READER =
       OBJECT_MAPPER.readerFor(new TypeReference<List<RecentAction>>() {
       });
-  private final static ObjectReader STRING_LIST_READER =
+  private static final ObjectReader STRING_LIST_READER =
       OBJECT_MAPPER.readerFor(new TypeReference<List<String>>() {
       });
-  private final static ObjectReader SUBMISSION_LIST_READER =
+  private static final ObjectReader SUBMISSION_LIST_READER =
       OBJECT_MAPPER.readerFor(new TypeReference<List<Submission>>() {
       });
-  private final static ObjectReader USER_LIST_READER =
+  private static final ObjectReader USER_LIST_READER =
       OBJECT_MAPPER.readerFor(new TypeReference<List<User>>() {
       });
 
-  public final static int PROBLEMSET_RECENT_SUBMISSIONS_LIMIT = 1000;
-  public final static int RECENT_ACTIONS_LIMIT = 100;
-  public final static int STANDINGS_HANDLES_LIMIT = 10000;
-  public final static int USER_INFO_LIMIT = 10000;
+  public static final int PROBLEMSET_RECENT_SUBMISSIONS_LIMIT = 1000;
+  public static final int RECENT_ACTIONS_LIMIT = 100;
+  public static final int STANDINGS_HANDLES_LIMIT = 10000;
+  public static final int USER_INFO_LIMIT = 10000;
 
+  /**
+   * Creates connector to the Codeforces API with specified key, secret and language settings.
+   *
+   * @param key    key for usage of authorized methods. Con be omitted by passing null.
+   * @param secret secret for usage of authorized methods. Con be omitted by passing null.
+   * @param lang   language option to be used as preferable. Can be either "en" or "ru".
+   */
   public CodeforcesApi(final String key, final String secret, final String lang) {
     if ((key != null && secret == null) || (key == null && secret != null)) {
       this.key = null;
@@ -223,7 +230,7 @@ public class CodeforcesApi {
     return CODEFORCES_API + method + "?" + combineParameters(parameters);
   }
 
-  public JsonNode wrappedRequest(final String method, Map<String, String> parameters)
+  private JsonNode wrappedRequest(final String method, Map<String, String> parameters)
       throws CodeforcesApiException {
     JsonNode result;
     try {
@@ -333,7 +340,7 @@ public class CodeforcesApi {
    * @param gym If true — than gym contests are returned. Otherwise, regular contests are returned.
    *            Can be omitted by passing null.
    * @return If this method is called not anonymously, then all available contests for a calling
-   * user will be returned too, including mashups and private gyms.
+   *     user will be returned too, including mashups and private gyms.
    * @throws CodeforcesApiException if API call returns malformed response.
    */
   public List<Contest> contestList(final Boolean gym) throws CodeforcesApiException {
@@ -393,7 +400,7 @@ public class CodeforcesApi {
    *                       Otherwise, only official contestants are shown. Can be omitted by passing
    *                       null.
    * @return ContestStandings object containing the description of the contest and the requested
-   * part of the standings.
+   *     part of the standings.
    * @throws CodeforcesApiException if either API call returns malformed response or specified
    *                                parameters are invalid.
    */
@@ -654,8 +661,7 @@ public class CodeforcesApi {
    *                   month are returned. Otherwise, all users with at least one rated contest are
    *                   returned.
    * @return returns a list of users, sorted in decreasing order of rating.
-   * @throws CodeforcesApiException if either API call returns malformed response or specified
-   *                                parameters are invalid.
+   * @throws CodeforcesApiException if API call returns malformed response.
    */
   public List<User> userRatedList(final boolean activeOnly) throws CodeforcesApiException {
     Map<String, String> parameters = new HashMap<>();
