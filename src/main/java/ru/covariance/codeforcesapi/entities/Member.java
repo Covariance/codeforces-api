@@ -5,5 +5,8 @@ import lombok.Data;
 @Data
 public class Member {
 
-  private String handle; // Codeforces user handle.
+  /**
+   * Codeforces user handle.
+   */
+  private String handle;
 }
