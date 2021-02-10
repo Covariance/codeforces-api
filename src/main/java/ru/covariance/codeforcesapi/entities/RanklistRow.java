@@ -6,12 +6,45 @@ import lombok.Data;
 @Data
 public class RanklistRow {
 
-  private Party party; //	Party object. Party that took a corresponding place in the contest.
-  private int rank; // Party place in the contest.
-  private double points; // Total amount of points, scored by the party.
-  private int penalty; // Total penalty (in ICPC meaning) of the party.
+  /**
+   * Party object. Party that took a corresponding place in the contest.
+   */
+  private Party party;
+
+  /**
+   * Party place in the contest.
+   */
+  private int rank;
+
+  /**
+   * Total amount of points, scored by the party.
+   */
+  private double points;
+
+  /**
+   * Total penalty (in ICPC meaning) of the party.
+   */
+  private int penalty;
+
+  /**
+   * Count of successful hacks.
+   */
   private int successfulHackCount;
+
+  /**
+   * Count of unsuccessful hacks.
+   */
   private int unsuccessfulHackCount;
-  private List<ProblemResult> problemResults; // Party results for each problem. Order of the problems is the same as in "problems" field of the returned object.
-  private int lastSubmissionTimeSeconds; // For IOI contests only. Time in seconds from the start of the contest to the last submission that added some points to the total score of the party.
+
+  /**
+   * Party results for each problem. Order of the problems is the same as in "problems" field of the
+   * returned object.
+   */
+  private List<ProblemResult> problemResults;
+
+  /**
+   * For IOI contests only. Time in seconds from the start of the contest to the last submission
+   * that added some points to the total score of the party.
+   */
+  private int lastSubmissionTimeSeconds;
 }
