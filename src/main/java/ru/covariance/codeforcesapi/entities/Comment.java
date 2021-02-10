@@ -5,12 +5,38 @@ import lombok.Data;
 @Data
 public class Comment {
 
-  
+  /**
+   * Comment id.
+   */
   private int id;
-  private int creationTimeSeconds; // Time, when comment was created, in unix format.
+
+  /**
+   * Time, when comment was created, in unix format.
+   */
+  private int creationTimeSeconds;
+
+  /**
+   * Handle of comment author.
+   */
   private String commentatorHandle;
+
+  /**
+   * Comment locale.
+   */
   private String locale;
+
+  /**
+   * Comment's content.
+   */
   private String text;
-  private Integer parentCommentId; // Can be absent.
+
+  /**
+   * Parent comment id. Can be absent.
+   */
+  private Integer parentCommentId;
+
+  /**
+   * Rating of comment.
+   */
   private int rating;
 }
