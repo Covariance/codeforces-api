@@ -5,7 +5,18 @@ import lombok.Data;
 @Data
 public class RecentAction {
 
-  private int timeSeconds; // Action time, in unix format.
-  private BlogEntry blogEntry; // BlogEntry object in short form. Can be absent.
-  private Comment comment; // Comment object. Can be absent.
+  /**
+   * Action time, in unix format.
+   */
+  private int timeSeconds;
+
+  /**
+   * BlogEntry object in short form. Can be absent.
+   */
+  private BlogEntry blogEntry;
+
+  /**
+   * Comment object. Can be absent.
+   */
+  private Comment comment;
 }
