@@ -1,7 +1,7 @@
 # codeforces-api
 [![Language](https://img.shields.io/badge/language-java-green.svg)](https://github.com/CovarianceMomentum/codeforces-api)
 [![GitHub license](https://img.shields.io/github/license/CovarianceMomentum/codeforces-api.svg)](https://github.com/CovarianceMomentum/codeforces-api/blob/master/LICENSE)
-[![](https://jitpack.io/v/CovarianceMomentum/codeforces-api.svg)](https://jitpack.io/#CovarianceMomentum/codeforces-api)
+[![JitPack Repo](https://jitpack.io/v/CovarianceMomentum/codeforces-api.svg)](https://jitpack.io/#CovarianceMomentum/codeforces-api)
 
 codeforces-api is a [Codeforces](https://codeforces.com/) API wrapper library written in Java.
 Checks the official design doc [here](https://codeforces.com/apiHelp).
@@ -15,6 +15,8 @@ but to this day there were no wrappers for it written in Java.
 ## Installation
 
 Currently, [jitpack](https://jitpack.io/) is used for the installation process.
+
+Latest stable release is `35e7ac341d`.
 
 ### Gradle
 1. Add the JitPack repository in your root build.gradle at the end of repositories:
