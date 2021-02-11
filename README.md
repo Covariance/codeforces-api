@@ -16,7 +16,7 @@ but to this day there were no wrappers for it written in Java.
 
 Currently, [jitpack](https://jitpack.io/) is used for the installation process.
 
-Latest stable release is `cc68c05`.
+The latest stable release is `cc68c0543c`.
 
 ### Gradle
 1. Add the JitPack repository in your root build.gradle at the end of repositories:
