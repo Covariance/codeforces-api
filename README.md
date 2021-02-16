@@ -3,7 +3,7 @@
 [![GitHub license](https://img.shields.io/github/license/CovarianceMomentum/codeforces-api.svg)](https://github.com/CovarianceMomentum/codeforces-api/blob/master/LICENSE)
 [![JitPack Repo](https://jitpack.io/v/CovarianceMomentum/codeforces-api.svg)](https://jitpack.io/#CovarianceMomentum/codeforces-api)
 
-codeforces-api is a [Codeforces](https://codeforces.com/) API wrapper library written in Java.
+codeforces-api is a thread-safe [Codeforces](https://codeforces.com/) API wrapper library written in Java.
 Checks the official design doc [here](https://codeforces.com/apiHelp).
 
 [Codeforces](https://codeforces.com/) is a website that hosts competitive programming contests. 
