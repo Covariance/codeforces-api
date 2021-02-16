@@ -178,7 +178,7 @@ public class CodeforcesApi {
           MessageDigest.getInstance("SHA-512").digest(input.getBytes())
       ).toString(16);
     } catch (NoSuchAlgorithmException e) {
-      throw new RuntimeException(e);
+      throw new RuntimeException("No SHA-512 algorithm specified.");
     }
   }
 
