@@ -246,6 +246,10 @@ public class CodeforcesApi {
     return unpackedResult.get();
   }
 
+  private CodeforcesApiException malformedResultException(final IOException e) {
+    return new CodeforcesApiException("Result is malformed: " + e.getMessage());
+  }
+
   /**
    * Checks if this API connector is anonymous.
    *
@@ -283,7 +287,7 @@ public class CodeforcesApi {
         return COMMENT_LIST_READER.readValue(result);
       }
     } catch (IOException e) {
-      throw new CodeforcesApiException("Result array is malformed: " + result);
+      throw malformedResultException(e);
     }
   }
 
@@ -306,7 +310,7 @@ public class CodeforcesApi {
         return OBJECT_MAPPER.treeToValue(result, BlogEntry.class);
       }
     } catch (JsonProcessingException e) {
-      throw new CodeforcesApiException("Result is malformed: " + result);
+      throw malformedResultException(e);
     }
   }
 
@@ -330,7 +334,7 @@ public class CodeforcesApi {
         return HACK_LIST_READER.readValue(result);
       }
     } catch (IOException e) {
-      throw new CodeforcesApiException("Result array is malformed: " + result);
+      throw malformedResultException(e);
     }
   }
 
@@ -354,7 +358,7 @@ public class CodeforcesApi {
         return CONTEST_LIST_READER.readValue(result);
       }
     } catch (IOException e) {
-      throw new CodeforcesApiException("Result array is malformed: " + result);
+      throw malformedResultException(e);
     }
   }
 
@@ -378,7 +382,7 @@ public class CodeforcesApi {
         return RATING_CHANGE_LIST_READER.readValue(result);
       }
     } catch (IOException e) {
-      throw new CodeforcesApiException("Result array is malformed: " + result);
+      throw malformedResultException(e);
     }
   }
 
@@ -437,7 +441,7 @@ public class CodeforcesApi {
         return OBJECT_MAPPER.treeToValue(result, ContestStandings.class);
       }
     } catch (JsonProcessingException e) {
-      throw new CodeforcesApiException("Result is malformed: " + result);
+      throw malformedResultException(e);
     }
   }
 
@@ -475,7 +479,7 @@ public class CodeforcesApi {
         return SUBMISSION_LIST_READER.readValue(result);
       }
     } catch (IOException e) {
-      throw new CodeforcesApiException("Result array is malformed: " + result);
+      throw malformedResultException(e);
     }
   }
 
@@ -505,7 +509,7 @@ public class CodeforcesApi {
         return OBJECT_MAPPER.treeToValue(result, Problemset.class);
       }
     } catch (JsonProcessingException e) {
-      throw new CodeforcesApiException("Result is malformed: " + result);
+      throw malformedResultException(e);
     }
   }
 
@@ -539,7 +543,7 @@ public class CodeforcesApi {
         return SUBMISSION_LIST_READER.readValue(result);
       }
     } catch (IOException e) {
-      throw new CodeforcesApiException("Result array is malformed: " + result);
+      throw malformedResultException(e);
     }
   }
 
@@ -568,7 +572,7 @@ public class CodeforcesApi {
         return RECENT_ACTION_LIST_READER.readValue(result);
       }
     } catch (IOException e) {
-      throw new CodeforcesApiException("Result array is malformed: " + result);
+      throw malformedResultException(e);
     }
   }
 
@@ -594,7 +598,7 @@ public class CodeforcesApi {
         return BLOG_ENTRY_LIST_READER.readValue(result);
       }
     } catch (IOException e) {
-      throw new CodeforcesApiException("Result array is malformed: " + result);
+      throw malformedResultException(e);
     }
   }
 
@@ -620,7 +624,7 @@ public class CodeforcesApi {
         return STRING_LIST_READER.readValue(result);
       }
     } catch (IOException e) {
-      throw new CodeforcesApiException("Result array is malformed: " + result);
+      throw malformedResultException(e);
     }
   }
 
@@ -650,7 +654,7 @@ public class CodeforcesApi {
         return USER_LIST_READER.readValue(result);
       }
     } catch (IOException e) {
-      throw new CodeforcesApiException("Result array is malformed: " + result);
+      throw malformedResultException(e);
     }
   }
 
@@ -674,7 +678,7 @@ public class CodeforcesApi {
         return USER_LIST_READER.readValue(result);
       }
     } catch (IOException e) {
-      throw new CodeforcesApiException("Result array is malformed: " + result);
+      throw malformedResultException(e);
     }
   }
 
@@ -700,7 +704,7 @@ public class CodeforcesApi {
         return RATING_CHANGE_LIST_READER.readValue(result);
       }
     } catch (IOException e) {
-      throw new CodeforcesApiException("Result array is malformed: " + result);
+      throw malformedResultException(e);
     }
   }
 
@@ -735,7 +739,7 @@ public class CodeforcesApi {
         return SUBMISSION_LIST_READER.readValue(result);
       }
     } catch (IOException e) {
-      throw new CodeforcesApiException("Result array is malformed: " + result);
+      throw malformedResultException(e);
     }
   }
 }
