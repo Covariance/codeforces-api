@@ -3,6 +3,8 @@
 [![GitHub license](https://img.shields.io/github/license/CovarianceMomentum/codeforces-api.svg)](https://github.com/CovarianceMomentum/codeforces-api/blob/master/LICENSE)
 [![JitPack Repo](https://jitpack.io/v/CovarianceMomentum/codeforces-api.svg)](https://jitpack.io/#CovarianceMomentum/codeforces-api)
 
+For the explanation of WHY this repository is needed, follow my [blogpost](https://codeforces.com/blog/CovarianceMomentum).
+
 codeforces-api is a thread-safe [Codeforces](https://codeforces.com/) API wrapper library written in Java.
 Checks the official design doc [here](https://codeforces.com/apiHelp).
 
